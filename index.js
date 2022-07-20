@@ -12,7 +12,7 @@ function addProps(source) {
     if (!parts) throw new Error("Unable to parse as svg.");
 
     const [, svgStart, svgBody] = parts;
-    let s = `${svgStart} {...$$props} ${svgBody}`;
+    let s = `${svgStart} {...$$restProps} ${svgBody}`;
     return s.replace("</svg>", "\n<slot/>\n</svg>");
 }
 
